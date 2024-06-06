@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Categories</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/categories.css') }}">
+    <link rel="stylesheet" href="styles/categories.css">
 </head>
 <body>
     <header>
@@ -18,32 +18,32 @@
             <h2>Choose a Category</h2>
             <ul>
                 <li>
-                    <a href="{{ url_for('category', category_name='mystery') }}">
-                        <img src="{{ url_for('static', filename='images/mystery.jpg') }}" alt="Mystery">
-                        <span>Mystery</span>
+                    <a href="category/mystery.html">
+                        <img src="images/mystery.jpg" alt="Mystery">
+                        <span>Mystery</span> 
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('category', category_name='thriller') }}">
-                        <img src="{{ url_for('static', filename='images/thriller.jpg') }}" alt="Thriller">
+                    <a href="category/thriller.html">
+                        <img src="images/thriller.jpg" alt="Thriller">
                         <span>Thriller</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('category', category_name='adventure') }}">
-                        <img src="{{ url_for('static', filename='images/adventure.jpg') }}" alt="Adventure">
+                    <a href="category/adventure.html">
+                        <img src="images/adventure.jpg" alt="Adventure">
                         <span>Adventure</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('category', category_name='fantasy') }}">
-                        <img src="{{ url_for('static', filename='images/fantasy.jpg') }}" alt="Fantasy">
+                    <a href="category/fantasy.html">
+                        <img src="images/fantasy.jpg" alt="Fantasy">
                         <span>Fantasy</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('category', category_name='fiction') }}">
-                        <img src="{{ url_for('static', filename='images/fiction.jpg') }}" alt="Fiction">
+                    <a href="category/fiction.html">
+                        <img src="images/fiction.jpg" alt="Fiction">
                         <span>Fiction</span>
                     </a>
                 </li>
