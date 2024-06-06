@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books in {{ category }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .book {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .description {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Books in {{ category }}</h1>
+            <nav>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a>
+                <a href="{{ url_for('categories') }}"><i class="fas fa-th"></i> Categories</a>
+            </nav>
+        </div>
+    </header>
+    <section class="book-list">
+        {% for book in books %}
+        <div class="book" onclick="toggleDescription(this)">
+            <h2>{{ book.title }}</h2>
+            <p>{{ ', '.join(book.authors) }}</p>
+            <img src="{{ book.thumbnail }}" alt="{{ book.title }}">
+            <div class="description">
+                <p>{{ book.description }}</p>
+                <a href="{{ book.previewLink }}" target="_blank">Read Preview</a>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    <script>
+        function toggleDescription(bookElement) {
+            const description = bookElement.querySelector('.description');
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
